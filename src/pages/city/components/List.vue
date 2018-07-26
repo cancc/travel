@@ -1,89 +1,92 @@
 <template>
-	<div class="list">  
-		<div class="area">
-			<div class="title border-topbottom">当前城市</div>
-			<div class="button-list">
-				<div class="button-warpper">
-					<div class="button">北京</div>
+	<div class="list" ref="warpper">
+		<div>
+			<div class="area">
+				<div class="title border-topbottom">当前城市</div>
+				<div class="button-list">
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+				</div>
+			</div> 
+			<div class="area">
+				<div class="title border-topbottom">热门城市</div>
+				<div class="button-list">
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+					<div class="button-warpper">
+						<div class="button">北京</div>
+					</div>
+				</div>
+			</div> 
+			<div class="area">
+				<div class="title border-topbottom">A</div>
+				<div class="item-list">
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+				</div>
+				<div class="title border-topbottom">A</div>
+				<div class="item-list">
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+				</div>
+				<div class="title border-topbottom">A</div>
+				<div class="item-list">
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
+					<div class="item border-bottom">AAAAAA</div>
 				</div>
 			</div>
 		</div> 
-		<div class="area">
-			<div class="title border-topbottom">热门城市</div>
-			<div class="button-list">
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-				<div class="button-warpper">
-					<div class="button">北京</div>
-				</div>
-			</div>
-		</div> 
-		<div class="area">
-			<div class="title border-topbottom">A</div>
-			<div class="item-list">
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-			</div>
-			<div class="title border-topbottom">A</div>
-			<div class="item-list">
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-			</div>
-			<div class="title border-topbottom">A</div>
-			<div class="item-list">
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-				<div class="item border-bottom">AAAAAA</div>
-			</div>
-		</div>
 	</div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 import axios from 'axios'
 export default {
     name: 'List',
@@ -94,6 +97,7 @@ export default {
 		}
 	},
 	mounted() {
+		let scroll = new BScroll(this.$refs.warpper);
 		this.cityData();
 	},
 	methods: {
@@ -129,7 +133,7 @@ export default {
 	overflow hidden
 	.title
 		font-size 0.4rem
-		line-height 0.4rem
+		line-height 0.5rem
 		background #ccc
 		padding-left 0.2rem
 		color #666
