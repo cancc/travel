@@ -1,14 +1,12 @@
 <template>
-    <div class="header">
-        <div>城市选择</div>
-				<router-link to="/">
-					<div class="header-left">
-            <div class="iconfont back-icon">&#xe624;</div>
-        	</div>
-				</router-link>
-        
-    </div>
-  
+	<div class="header">
+	<div>城市选择</div>
+		<router-link to="/">
+			<div class="header-left">
+				<div class="iconfont back-icon">&#xe624;</div>
+			</div>
+		</router-link>       
+	</div>
 </template>
 
 <script>
