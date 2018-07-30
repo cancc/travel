@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-	<div>城市选择</div>
+	<div>城市选择1</div>
 		<router-link to="/">
 			<div class="header-left">
 				<div class="iconfont back-icon">&#xe624;</div>
