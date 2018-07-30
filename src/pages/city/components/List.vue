@@ -47,7 +47,7 @@ export default {
 		letter() {
 			if(this.letter) {
 				const element = this.$refs[this.letter][0];
-				console.log(element);
+				//console.log(element);
 				this.scrollList.scrollToElement(element);
 			}
 		}
