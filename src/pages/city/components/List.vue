@@ -5,7 +5,7 @@
 				<div class="title border-topbottom">当前城市</div>
 				<div class="button-list">
 					<div class="button-warpper">
-						<div class="button">北京</div>
+						<div class="button">{{this.$store.state.city}}</div>
 					</div>
 				</div>
 			</div>
@@ -13,7 +13,7 @@
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
 					<div class="button-warpper" v-for="item in hotCities" :key="item.id">
-						<div class="button">{{item.name}}</div>
+						<div class="button" @click="handerCity(item.name)">{{item.name}}</div>
 					</div>	
 				</div>
 			</div>
@@ -22,7 +22,8 @@
 				<div class="item-list">
 					<div class="item border-bottom" 
 						v-for="cityName in item" 
-						:key="cityName.id">
+						:key="cityName.id"
+						@click="handerCity(cityName.name)">
 						{{cityName.name}}
 					</div>
 				</div>
@@ -42,6 +43,12 @@ export default {
 	},
 	mounted() {
 		this.scrollList = new BScroll(this.$refs.warpper);
+	},
+	methods: {
+		handerCity(city) {
+			this.$store.commit('changeCityValue', city);
+			this.$router.push('/');
+		}	
 	},
 	watch: {
 		letter() {

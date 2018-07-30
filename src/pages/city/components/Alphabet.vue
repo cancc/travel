@@ -38,7 +38,7 @@ export default {
 	},
 	methods: {
 		handleClick(e) {
-			this.$emit('change', e.target.innerText)
+			this.$emit('change', e.target.innerText);
 			// console.log(e.target.innerText)
 		},
 		handerTouchStart(e) {
