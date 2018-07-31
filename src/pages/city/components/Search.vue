@@ -10,7 +10,7 @@
 					<li class="search-item border-bottom" 
 						v-for="item in list" 
 						:key="item.id"
-						@click="changeCity(item.name)"
+						@click="handerCity(item.name)"
 						>
 						{{item.name}}
 					</li>
@@ -23,7 +23,7 @@
 
 <script>
 import BScroll from 'better-scroll'
-
+import { mapMutations } from 'vuex'
 export default {
     name: 'CitySearch',
 		props: {
@@ -31,20 +31,24 @@ export default {
 		},
     data() {
         return {
-					placeholder: '请输入城市名或拼音',
-					list: [],
-					timer: null,
-					keyword: ''
+			placeholder: '请输入城市名或拼音',
+			list: [],
+			timer: null,
+			keyword: ''
         }
     },
 		mounted () {
 			this.scroll = new BScroll(this.$refs.search)
 		},
 		methods: {
-			changeCity(city) {
-				this.$store.commit('changeCityValue', city);
-				this.$router.push('/');
+			handerCity(city) {
+			// this.$store.commit('changeCityValue', city);
+			this.changeCityValue(city)
+			this.$router.push('/');
 			},
+
+			...mapMutations(['changeCityValue']),
+
 			focus() {
 				this.placeholder = ''
 			},
