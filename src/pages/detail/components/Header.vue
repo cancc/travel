@@ -27,11 +27,9 @@ export default {
     computed: {
         ...mapState(['bannerHeight'])
     },
-    activated() {
-        window.addEventListener('scroll', this.handleScroll)
-    },
     methods: {
         handleScroll() {
+            // console.log('scroll')
             const top = document.documentElement.scrollTop
             //console.log(top)
             if(top > 1 || top > this.bannerHeight ) {
@@ -42,6 +40,15 @@ export default {
                 
             }
         }
+    },
+    // keep-alive组件激活时调用
+    activated() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    // keep-alive组件停用时调用
+    deactivated() {
+        // 解绑全局事件
+        window.removeEventListener('scroll', this.handleScroll)
     }
 	
 }
@@ -51,8 +58,8 @@ export default {
   @import '~styles/varibles.styl';  
     .header-abs
         position absolute
-        top 0
-        left 0
+        top 0.1rem
+        left 0.1rem
         width 0.8rem
         height 0.8rem
         line-height 0.8rem
@@ -63,6 +70,7 @@ export default {
             color #fff
             font-size 0.4rem
     .header-fixed
+        z-index 2
         position fixed
         top 0
         left 0

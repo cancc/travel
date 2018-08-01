@@ -1,16 +1,17 @@
 <template>
 	<div>
 		<div class="banner" id="bannerId">
-			<img @click="handleShowGallary" class="banner-img" src="http://img1.qunarzz.com/sight/p0/201403/10/d7fbf64f171d7c2ad731f77c82f5f986.jpg_r_800x800_a4ce340b.jpg" alt="">
+			<img @click="handleShowGallary" class="banner-img" 
+			:src="bannerImg" alt="">
 			<div class="banner-info">
 				<div class="banner-number">
 					<span class="iconfont banner-icon">&#xe64b;</span>
 					13
 				</div>
-				<div class="banner-title">郑州方特水上乐园</div>
+				<div class="banner-title">{{sightName}}</div>
 			</div>
 		</div>
-		<common-gallary @handleCloseGallary="Close" :imgs="imgList" v-show="showGallary"></common-gallary>
+		<common-gallary @handleCloseGallary="Close" :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
 	</div>
 </template>
 
@@ -19,15 +20,15 @@ import CommonGallary from 'common/gallary/Gallary'
 import { mapState, mapMutations } from 'vuex'
 export default {
 	name: 'DetailBanner',
+	props: {
+		bannerImg: String,
+		gallaryImgs: Array,
+		sightName: String,
+	},
 	data() {
 		return {
 			banner_height: 100,
 			showGallary: false,
-			imgList: [
-				'http://img1.qunarzz.com/sight/p0/201403/10/03b24acde057acb03c1b514bd2bf638c.jpg_r_800x800_ed476c02.jpg',
-				'http://img1.qunarzz.com/sight/p0/1412/b8/4234f12011dd8d8f7b3b0e608374f671.water.jpg_r_800x800_064f34f1.jpg',
-				'http://img1.qunarzz.com/sight/p0/201403/10/d7fbf64f171d7c2ad731f77c82f5f986.jpg_r_800x800_a4ce340b.jpg'
-			]
 		}
 	},
 	mounted() {
@@ -43,7 +44,7 @@ export default {
 		},
 		changeBannerH(banner_height) {
 			this.changeBannerHeight(this.banner_height)
-			console.log(this.banner_height)
+			//console.log(this.banner_height)
 		},
 		...mapMutations(['changeBannerHeight']),
 		handleShowGallary() {
