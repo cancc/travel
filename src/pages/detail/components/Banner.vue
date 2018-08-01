@@ -11,13 +11,17 @@
 				<div class="banner-title">{{sightName}}</div>
 			</div>
 		</div>
-		<common-gallary @handleCloseGallary="Close" :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
+		<!-- 动画插槽 -->
+		<fade>
+			<common-gallary @handleCloseGallary="Close" :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
+		</fade>
 	</div>
 </template>
 
 <script>
-import CommonGallary from 'common/gallary/Gallary'
 import { mapState, mapMutations } from 'vuex'
+import CommonGallary from 'common/gallary/Gallary'
+import Fade from 'common/fade/Fade'
 export default {
 	name: 'DetailBanner',
 	props: {
@@ -58,7 +62,8 @@ export default {
 		this.changeBannerH()
 	},
 	components: {
-		CommonGallary
+		CommonGallary,
+		Fade
 	}
 }
 </script>
