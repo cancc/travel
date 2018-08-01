@@ -6,5 +6,6 @@ try {
 }catch(e){}
 
 export default { 
-    city: localStorage.city || '上海'
+    city: localStorage.city || '上海',
+    bannerHeight: 1,
 }

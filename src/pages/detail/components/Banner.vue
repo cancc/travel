@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div class="banner">
-			<img @click="handleShowGallary" class="banner-img" src="//img1.qunarzz.com/sight/p0/1605/97/970d5ffe183b4f2190.img.jpg_600x330_f2e06330.jpg" alt="">
+		<div class="banner" id="bannerId">
+			<img @click="handleShowGallary" class="banner-img" src="http://img1.qunarzz.com/sight/p0/201403/10/d7fbf64f171d7c2ad731f77c82f5f986.jpg_r_800x800_a4ce340b.jpg" alt="">
 			<div class="banner-info">
 				<div class="banner-number">
 					<span class="iconfont banner-icon">&#xe64b;</span>
@@ -16,10 +16,12 @@
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import { mapState, mapMutations } from 'vuex'
 export default {
 	name: 'DetailBanner',
 	data() {
 		return {
+			banner_height: 100,
 			showGallary: false,
 			imgList: [
 				'http://img1.qunarzz.com/sight/p0/201403/10/03b24acde057acb03c1b514bd2bf638c.jpg_r_800x800_ed476c02.jpg',
@@ -28,13 +30,31 @@ export default {
 			]
 		}
 	},
+	mounted() {
+		this.getBannerHeight()
+	},
+	computed: {
+		...mapState(['bannerHeight'])
+	},
 	methods: {
+		getBannerHeight() {
+			let height = document.getElementById("bannerId").scrollHeight
+			this.banner_height = height
+		},
+		changeBannerH(banner_height) {
+			this.changeBannerHeight(this.banner_height)
+			console.log(this.banner_height)
+		},
+		...mapMutations(['changeBannerHeight']),
 		handleShowGallary() {
 			this.showGallary = true
 		},
 		Close() {
 			this.showGallary = false
 		}
+	},
+	activated() {
+		this.changeBannerH()
 	},
 	components: {
 		CommonGallary

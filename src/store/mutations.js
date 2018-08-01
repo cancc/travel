@@ -5,5 +5,8 @@ export default {
             localStorage.city = city;
         } catch(e) {}
         
+    },
+    changeBannerHeight(state, bannerHeight) {
+        state.bannerHeight = bannerHeight;
     }
 }
